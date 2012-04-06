@@ -5,6 +5,7 @@ Copycopter::Application.routes.draw do
         resources :deploys, :only => [:create]
         resources :draft_blurbs, :only => [:create, :index]
         resources :published_blurbs, :only => [:index]
+        resources :blurbs, :only => [:show], :format => false, :constraints => { :id => /[0-9A-Za-z\-\.]+/ }
       end
     end
   end
